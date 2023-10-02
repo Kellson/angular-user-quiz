@@ -1,1 +1,92 @@
-<p>quiz works!</p>
+<div class="container">
+  <div>
+    <h1>Questionários</h1>
+    <div></div>
+  </div>
+  <div>
+    <div class="quizList">
+      <h3>Matemática</h3>
+      <div class="quizListContainer">
+        <div *ngFor="let x of quizInfo.math">
+          <p>{{ x.title }}</p>
+          <p>
+            <fa-icon [icon]="faArrowRight"></fa-icon> Dificuldade: {{ x.level }}
+          </p>
+          <p>
+            <fa-icon [icon]="faArrowRight"></fa-icon> Questões: {{ x.quantity }}
+          </p>
+          <button type="button" (click)="handleSetQuiz(x)">Iniciar</button>
+        </div>
+      </div>
+    </div>
+    <div class="quizList">
+      <h3>Português</h3>
+      <div class="quizListContainer">
+        <div *ngFor="let x of quizInfo.portuguese">
+          <p>{{ x.title }}</p>
+          <p>
+            <fa-icon [icon]="faArrowRight"></fa-icon> Dificuldade: {{ x.level }}
+          </p>
+          <p>
+            <fa-icon [icon]="faArrowRight"></fa-icon> Questões: {{ x.quantity }}
+          </p>
+          <button type="button" (click)="handleSetQuiz(x)">Iniciar</button>
+        </div>
+      </div>
+    </div>
+    <div class="quizList">
+      <h3>Ciências</h3>
+      <div class="quizListContainer">
+        <div *ngFor="let x of quizInfo.sciences">
+          <p>{{ x.title }}</p>
+          <p>
+            <fa-icon [icon]="faArrowRight"></fa-icon> Dificuldade: {{ x.level }}
+          </p>
+          <p>
+            <fa-icon [icon]="faArrowRight"></fa-icon> Questões: {{ x.quantity }}
+          </p>
+          <button type="button" (click)="handleSetQuiz(x)">Iniciar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!!selectedQuiz" class="quizContainer">
+    <a href="#selectedQuiz"></a>
+    <h3>{{ selectedQuiz.title }}</h3>
+    <div
+      *ngFor="let question of selectedQuiz.questions; index as i"
+      class="questionContainer"
+    >
+      <div class="question">{{ i + 1 + " - " + question.question }}</div>
+      <form [formGroup]="formGroup">
+        <span>
+          <input
+            type="radio"
+            [formControlName]="'question' + (i + 1)"
+            value="a"
+          />
+          {{ question.a }}</span
+        >
+        <span>
+          <input
+            type="radio"
+            [formControlName]="'question' + (i + 1)"
+            value="b"
+          />
+          {{ question.b }}</span
+        >
+        <span>
+          <input
+            type="radio"
+            [formControlName]="'question' + (i + 1)"
+            value="c"
+          />
+          {{ question.c }}</span
+        >
+      </form>
+    </div>
+    <button class="customButton" type="button" (click)="showQuizResult()">
+      Finalizar
+    </button>
+  </div>
+</div>

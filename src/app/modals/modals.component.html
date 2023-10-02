@@ -1,0 +1,15 @@
+<div id="modalContainer" *ngIf="modalService.modalInformations">
+  <div class="body">
+    <button class="background" (click)="handleCloseAll()"></button>
+
+    <div class="foreground" #foreGround>
+      <app-quiz-result-modal
+        *ngIf="
+          modalService.modalInformations &&
+          modalService.modalInformations.id === 'quizResultModal'
+        "
+        class="modalFilha backgroundClose"
+      ></app-quiz-result-modal>
+    </div>
+  </div>
+</div>

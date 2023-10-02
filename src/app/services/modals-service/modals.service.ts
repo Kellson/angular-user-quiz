@@ -4,7 +4,6 @@ import { Inject, Injectable } from '@angular/core';
 interface ModalInfo {
   id: string;
   data?: any;
-  show: boolean;
 }
 
 @Injectable({
@@ -16,7 +15,7 @@ export class ModalsService {
   constructor(@Inject(DOCUMENT) private document: Document) {}
 
   changeModal(modalInfo?: ModalInfo) {
-    if (modalInfo && modalInfo.show) {
+    if (modalInfo) {
       this.document.body.style.overflow = 'hidden';
     } else {
       this.document.body.style.overflow = 'initial';

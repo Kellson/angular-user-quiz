@@ -1,0 +1,53 @@
+@keyframes posicaoModal {
+  from {
+    margin-top: 100vh;
+  }
+
+  to {
+    margin-top: 0px;
+  }
+}
+
+.body {
+  width: 200vw;
+  position: fixed;
+  z-index: 82;
+  height: 100vh;
+  cursor: default;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.foreground {
+  box-sizing: border-box;
+  display: flex;
+  transform: translateX(-100vw);
+  margin: 0px auto;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  height: fit-content;
+  z-index: 99;
+  > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    max-width: 450px;
+    position: relative;
+    width: 80vw;
+    animation: 0.2s posicaoModal ease-out;
+  }
+}
+
+.background {
+  box-sizing: border-box;
+  width: 100vw;
+  z-index: 82;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: default;
+}

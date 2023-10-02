@@ -1,0 +1,25 @@
+<div class="container">
+  <h3 class="contentBody">Resultados</h3>
+  <div class="resultContainer">
+    <div>
+      <div>
+        <p>
+          <span></span>Acertos:
+          {{ this.modaisService.modalInformations?.data.ok }}
+        </p>
+        <p>
+          <span></span>Erros:
+          {{ this.modaisService.modalInformations?.data.wrong }}
+        </p>
+        <p>
+          <span></span>Não respondidas:
+          {{ this.modaisService.modalInformations?.data.notAnswered }}
+        </p>
+      </div>
+      <div>Pie chart</div>
+    </div>
+    <button class="confirmButton" type="button" (click)="closeModal()">
+      Confirmar
+    </button>
+  </div>
+</div>

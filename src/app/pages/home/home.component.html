@@ -1,1 +1,74 @@
-<p>home works!</p>
+<div class="container">
+  <div>
+    <h1>Início</h1>
+    <div></div>
+  </div>
+  <div class="cardList">
+    <div>
+      <h3>Matemática</h3>
+      <div>
+        <div class="subjectResponse">
+          <p><span></span>Acertos: {{ fakeData.subjects.math.ok }}</p>
+          <p><span></span>Erros: {{ fakeData.subjects.math.wrong }}</p>
+          <p>
+            <span></span>Não respondidas:
+            {{ fakeData.subjects.math.notAnswered }}
+          </p>
+        </div>
+        <div>
+          <canvas
+            baseChart
+            class="chart"
+            [data]="mathDoughnutChartData"
+            [type]="doughnutChartType"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Português</h3>
+      <div>
+        <div class="subjectResponse">
+          <p><span></span>Acertos: {{ fakeData.subjects.portuguese.ok }}</p>
+          <p><span></span>Erros: {{ fakeData.subjects.portuguese.wrong }}</p>
+          <p>
+            <span></span>Não respondidas:
+            {{ fakeData.subjects.portuguese.notAnswered }}
+          </p>
+        </div>
+        <div style="display: block">
+          <canvas
+            baseChart
+            class="chart"
+            [data]="portugueseDoughnutChartData"
+            [type]="doughnutChartType"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3>Ciências</h3>
+      <div>
+        <div class="subjectResponse">
+          <p><span></span>Acertos: {{ fakeData.subjects.sciences.ok }}</p>
+          <p><span></span>Erros: {{ fakeData.subjects.sciences.wrong }}</p>
+          <p>
+            <span></span>Não respondidas:
+            {{ fakeData.subjects.sciences.notAnswered }}
+          </p>
+        </div>
+        <div style="display: block">
+          <canvas
+            baseChart
+            class="chart"
+            [data]="sciencesDoughnutChartData"
+            [type]="doughnutChartType"
+          >
+          </canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

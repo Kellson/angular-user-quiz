@@ -16,7 +16,15 @@
           {{ this.modaisService.modalInformations?.data.notAnswered }}
         </p>
       </div>
-      <div>Pie chart</div>
+      <div>
+        <canvas
+          baseChart
+          class="chart"
+          [data]="doughnutChartData"
+          [type]="doughnutChartType"
+        >
+        </canvas>
+      </div>
     </div>
     <button class="confirmButton" type="button" (click)="closeModal()">
       Confirmar

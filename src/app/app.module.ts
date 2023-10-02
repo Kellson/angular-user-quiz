@@ -3,6 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgChartsModule } from 'ng2-charts';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ModalsModule } from './modals/modals.module';
@@ -19,6 +20,7 @@ import { ModalsService } from './services/modals-service/modals.service';
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
+    NgChartsModule,
   ],
   providers: [ModalsService],
   bootstrap: [AppComponent],

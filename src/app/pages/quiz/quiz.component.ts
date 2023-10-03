@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
@@ -15,20 +16,21 @@ export class QuizComponent {
   formGroup: FormGroup = new FormGroup({});
   constructor(
     private formBuilder: FormBuilder,
-    private modalsService: ModalsService
+    private modalsService: ModalsService,
+    private viewportScroller: ViewportScroller
   ) {}
 
   handleSetQuiz(quizSubject: IQuizConfig) {
     this.selectedQuiz = quizSubject;
     const newFormGroupBody = this.selectedQuiz.questions.reduce(
-      (a, c, i) => ({
+      (a, _, i) => ({
         ...a,
         [`question${i + 1}`]: [''],
       }),
       {}
     );
-    console.log('FORM GROUP BODY: ', newFormGroupBody);
     this.formGroup = this.formBuilder.group(newFormGroupBody);
+    this.viewportScroller.scrollToAnchor('quizPageContainerId');
   }
 
   showQuizResult() {

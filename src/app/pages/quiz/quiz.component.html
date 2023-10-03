@@ -50,8 +50,7 @@
       </div>
     </div>
   </div>
-  <div *ngIf="!!selectedQuiz" class="quizContainer">
-    <a href="#selectedQuiz"></a>
+  <app-selected-quiz *ngIf="!!selectedQuiz" class="quizContainer">
     <h3>{{ selectedQuiz.title }}</h3>
     <div
       *ngFor="let question of selectedQuiz.questions; index as i"
@@ -88,5 +87,5 @@
     <button class="customButton" type="button" (click)="showQuizResult()">
       Finalizar
     </button>
-  </div>
+  </app-selected-quiz>
 </div>

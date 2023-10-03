@@ -1,3 +1,55 @@
 :host {
   width: 100%;
 }
+
+.customTable {
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.extraStyle {
+  width: 100%;
+  ::ng-deep {
+    thead {
+      background-color: var(--secondary);
+      > tr {
+        color: #fff;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  > div:first-of-type {
+    width: 100%;
+    > h1 {
+      font-size: 1.8rem;
+      padding-bottom: 10px;
+      box-sizing: border-box;
+    }
+    > div {
+      height: 2px;
+      width: 100%;
+      background-image: linear-gradient(
+        to right,
+        var(--primary),
+        var(--primary-light),
+        var(--primary)
+      );
+    }
+  }
+}
+
+.tableContent {
+  margin-top: 40px;
+  p,
+  th,
+  td,
+  div {
+    font-size: 1.4rem !important;
+  }
+}
